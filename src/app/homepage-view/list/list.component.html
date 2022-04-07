@@ -1,1 +1,5 @@
-<p>list works!</p>
+<p>Liste de film</p>
+
+<li *ngFor="let movie of movies">
+    <span appMovieHighlight>{{movie.title}}</span> - <span>{{movie.director}}</span>
+</li>

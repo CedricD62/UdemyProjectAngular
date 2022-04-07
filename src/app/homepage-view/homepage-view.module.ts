@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomepageViewComponent } from './homepage-view.component';
 import { ListComponent } from './list/list.component';
 import { HeaderComponent } from '../shared/header/header.component';
+import { MovieHighlightDirective } from '../shared/movie-highlight.directive';
 
 
 
@@ -10,7 +11,8 @@ import { HeaderComponent } from '../shared/header/header.component';
   declarations: [
     HomepageViewComponent,
     ListComponent,
-    HeaderComponent
+    HeaderComponent,
+    MovieHighlightDirective
   ],
   imports: [
     CommonModule
