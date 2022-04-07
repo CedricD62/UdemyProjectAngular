@@ -2,19 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { HomepageViewComponent } from './homepage-view/homepage-view.component';
-import { ListComponent } from './homepage-view/list/list.component';
-import { HeaderComponent } from './shared/header/header.component';
+import { HomepageViewModule } from './homepage-view/homepage-view.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomepageViewComponent,
-    ListComponent,
-    HeaderComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HomepageViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]
