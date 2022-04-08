@@ -1,5 +1,5 @@
 <p>Liste de film</p>
 
 <li *ngFor="let movie of movies">
-    <span appMovieHighlight>{{movie.title}}</span> - <span>{{movie.director}}</span>
+    <span appMovieHighlight>{{movie.title}}</span> - <span>{{movie.director | favoriteDirector: 'Christopher Nolan'}}</span>
 </li>
