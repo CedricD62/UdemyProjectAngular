@@ -1,28 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Movie } from '../interfaces/movie';
-
-const MOVIES: Movie[] = [
-  {
-    id:'1',
-    title:'Interstellar',
-    director: 'Christopher Nolan'
-  },
-  {
-    id:'2',
-    title:'Joker',
-    director: 'Todd Phillips'
-  },
-  {
-    id:'3',
-    title:'Black Panther',
-    director: 'Ryan Coogler'
-  },
-  {
-    id:'4',
-    title:'Inception',
-    director: 'Christopher Nolan'
-  }
-];
 
 
 @Injectable({
@@ -30,14 +9,28 @@ const MOVIES: Movie[] = [
 })
 export class MovieService {
 
-  constructor() { }
+  constructor(
+    private readonly httpClient: HttpClient
+  ) { }
 
-  getMovies(): Movie[] {
-    return MOVIES;
+  getMovies(): Observable<Movie[]> {
+    return this.httpClient.get<Movie[]>('/api/movies');
   }
 
-  getMovie(id: string): Movie {
-    return MOVIES.find((m: Movie) => m.id === id)!;
+  getMovie(id: string): Observable<Movie> {
+    return this.httpClient.get<Movie>(`/api/mivies/${id}`);
+  }
+
+  createMovie(movie: Movie): Observable<Movie>{
+    return this.httpClient.post<Movie>('api/movies', movie);
+  }
+
+  updateMovie(movie: Movie): Observable<Movie>{
+    return this.httpClient.put<Movie>(`/api/movies/${movie.id}`, movie);
+  }
+
+  deleteMovie(id:string): Observable<void>{
+    return this.httpClient.delete<void>(`/api/movies/${id}`);
   }
 
 }

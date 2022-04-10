@@ -1,0 +1,19 @@
+{
+  "movies": [
+    {
+      "id": "1",
+      "title": "Interstellar",
+      "director": "Christopher Nolan"
+    },
+    {
+      "id": "2",
+      "title": "Joker",
+      "director": "Todd Phillips"
+    },
+    {
+      "id": "3",
+      "title": "Black Panther",
+      "director": "Ryan Coogler"
+    }
+  ]
+}
