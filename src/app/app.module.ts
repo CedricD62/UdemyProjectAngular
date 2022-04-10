@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HomepageViewModule } from './homepage-view/homepage-view.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './shared/header/header.component';
 
 @NgModule({
   declarations: [
@@ -10,7 +12,8 @@ import { HomepageViewModule } from './homepage-view/homepage-view.module';
   ],
   imports: [
     BrowserModule,
-    HomepageViewModule
+    HomepageViewModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
