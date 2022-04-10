@@ -19,4 +19,8 @@ export class ListComponent implements OnInit {
     this.movies = this.movieService.getMovies();
   }
 
+  movieLiked(movie: Movie): void {
+    console.log(movie);
+  }
+
 }

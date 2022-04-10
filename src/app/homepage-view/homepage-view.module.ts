@@ -5,6 +5,7 @@ import { ListComponent } from './list/list.component';
 import { HeaderComponent } from '../shared/header/header.component';
 import { MovieHighlightDirective } from '../shared/movie-highlight.directive';
 import { FavoriteDirectorPipe } from '../shared/favorite-director.pipe';
+import { MovieComponent } from './list/movie/movie.component';
 
 
 
@@ -14,7 +15,8 @@ import { FavoriteDirectorPipe } from '../shared/favorite-director.pipe';
     ListComponent,
     HeaderComponent,
     MovieHighlightDirective,
-    FavoriteDirectorPipe
+    FavoriteDirectorPipe,
+    MovieComponent
   ],
   imports: [
     CommonModule
