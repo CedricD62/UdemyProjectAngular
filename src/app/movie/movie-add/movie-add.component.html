@@ -1,0 +1,13 @@
+<mat-card>
+    <mat-card-title>Ajouter un film<span *ngIf="title"> : {{title}}</span></mat-card-title>
+    <mat-card-content>
+        <form (ngSubmit)="onSubmit()">
+            <label for="title"> Title</label>
+            <input type="text" name="title" [(ngModel)]="title">
+            <label for="director"> Director</label>
+            <input type="text" name="director" [(ngModel)]="director">
+            <button type="submit">Submit</button>
+        </form>
+        <p *ngIf="isCreated">Film ajouté</p>
+    </mat-card-content>
+</mat-card>

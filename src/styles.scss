@@ -6,3 +6,9 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif; 
     background-color: #bbb;
 }
+
+.container{
+    width: 90%;
+    max-width: 640px;
+    margin: 3rem auto;
+}

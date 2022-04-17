@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { HomepageViewModule } from './homepage-view/homepage-view.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { routes } from './app.routing';
+import { HeaderModule } from './shared/header/header.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     HomepageViewModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    HeaderModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

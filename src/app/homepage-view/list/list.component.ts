@@ -22,8 +22,8 @@ export class ListComponent implements OnInit {
   }
 
   deleteMovie(movie: Movie): void {
-    this.movieService.deleteMovie(movie.id).subscribe(()=> {
-      console.log('DELETE;')
+    this.movieService.deleteMovie(movie.id!).subscribe(()=> {
+      console.log('DELETE')
     });
   }
 }

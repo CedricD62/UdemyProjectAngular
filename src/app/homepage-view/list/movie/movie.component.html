@@ -2,9 +2,10 @@
     <mat-card-title appMovieHighlight>{{movie.title}}</mat-card-title>
     <mat-card-subtitle>{{movie.director | favoriteDirector: 'Christopher Nolan'}}</mat-card-subtitle>
     <mat-card-actions>
-        <button mat-mini-fab color="accent" (click)="onClick()">
+        <button mat-mini-fab color="warn" (click)="onClick()">
             <mat-icon>delete</mat-icon>
         </button>
+        <a mat-mini-fab color="primary" [routerLink]="['/movie/edit', movie.id]"><mat-icon>create</mat-icon></a>
     </mat-card-actions>
 </mat-card>
 

@@ -1,0 +1,13 @@
+<mat-card *ngIf="movie">
+    <mat-card-title>Modifier un film</mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+            <label for="title"> Title</label>
+            <input type="text" name="title" formControlName="title">
+            <label for="director"> Director</label>
+            <input type="text" name="director" formControlName="director">
+            <button type="submit">Modifier</button>
+        </form>
+        <p *ngIf="isUpdated">Film modifié</p>
+    </mat-card-content>
+</mat-card>

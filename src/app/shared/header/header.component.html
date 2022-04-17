@@ -4,7 +4,8 @@
     </button>
     <span>DB Movies</span>
     <span class="spacer"></span>
-    <a mat-button href="#">Homepage</a>
-    <a mat-button href="#">Ajouter un film</a>
+    <a mat-button [routerLink]="['/']">Homepage</a>
+    <a mat-button [routerLink]="['/movie/add']">Ajouter un film</a>
+    <a mat-button [routerLink]="['/edit']">Editer un film</a>
   </mat-toolbar>
   
