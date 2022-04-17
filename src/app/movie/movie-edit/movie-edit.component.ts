@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { Movie } from 'src/app/interfaces/movie';
@@ -27,8 +27,11 @@ export class MovieEditComponent implements OnInit {
     ).subscribe((movie: Movie) => {
       this.movie = movie;
       this.movieForm = new FormGroup({
-        title: new FormControl(movie.title),
-        director: new FormControl(movie.director)
+        title: new FormControl(movie.title, [
+          Validators.required,
+          Validators.minLength(2)
+        ]),
+        director: new FormControl(movie.director,Validators.required)
       });
     });
    }

@@ -1,7 +1,5 @@
 
 import { Routes } from "@angular/router";
-import { HomepageViewComponent } from "./homepage-view/homepage-view.component";
-import { MovieAddModule } from "./movie/movie-add/movie-add.module";
 
 export const routes: Routes = [
     {
@@ -11,5 +9,9 @@ export const routes: Routes = [
     {
         path: 'movie',
         loadChildren: () => import('./movie/movie.module').then(m =>m.MovieModule)
+    },
+    {
+        path: 'director',
+        loadChildren: () => import('./director/director.module').then(m =>m.DirectorModule)
     }
 ];

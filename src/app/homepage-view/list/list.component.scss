@@ -1,0 +1,7 @@
+:host{
+    h1{
+        &:not(:first-of-type){
+            margin-top: 5rem;
+        }
+    }
+}

@@ -15,5 +15,28 @@
       "title": "Kong",
       "director": "Phil Jackson"
     }
+  ],
+  "directors": [
+    {
+      "id": "1",
+      "name": "Phil Jackson",
+      "movies": [
+        "Kong"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Ryan Coogler",
+      "movies": [
+        "Black Panther"
+      ]
+    },    
+    {
+      "id": "3",
+      "name": "Todd Phillips",
+      "movies": [
+        "Joker"
+      ]
+    }
   ]
 }

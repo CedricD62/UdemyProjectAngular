@@ -2,3 +2,5 @@
 
 <app-movie *ngFor="let movie of movies" [movieModel]="movie" (delete)="deleteMovie($event)"></app-movie>
 
+<h1>Liste de réalistuers</h1>
+<app-director *ngFor="let director of directors" [directorModel]="director" (delete)="deleteDirector($event)"></app-director>

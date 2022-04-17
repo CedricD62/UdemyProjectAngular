@@ -6,8 +6,11 @@
             <input type="text" name="title" formControlName="title">
             <label for="director"> Director</label>
             <input type="text" name="director" formControlName="director">
-            <button type="submit">Modifier</button>
+            <button [disabled]="!movieForm.valid" type="submit">Modifier</button>
         </form>
         <p *ngIf="isUpdated">Film modifié</p>
+            <p *ngIf="movieForm.get('title')!.errors?.['required']"> Le titre est obligatoire</p>
+            <p *ngIf="movieForm.get('title')!.errors?.['minlength']"> Le titre comporter deux caractères minimum</p>
+            <p *ngIf="movieForm.get('director')!.errors?.['required']"> Le nom du directeur est obligatoire</p>
     </mat-card-content>
 </mat-card>
