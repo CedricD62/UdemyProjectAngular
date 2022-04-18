@@ -1,1 +1,14 @@
-<p>director-edit works!</p>
+<mat-card *ngIf="director">
+    <mat-card-title>Modifier un réalisateur</mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="directorForm" (ngSubmit)="onSubmit()">
+            <label for="name"> Nom</label>
+            <input type="text" name="name" formControlName="name">
+            <button [disabled]="!directorForm.valid" type="submit">Modifier</button>
+        </form>
+        <p *ngIf="isUpdated">Film modifié</p>
+            <p *ngIf="directorForm.get('name')!.errors?.['required']"> Le réalisateur est obligatoire</p>
+            <p *ngIf="directorForm.get('name')!.errors?.['minlength']"> Le réalisateur doit comporter deux caractères minimum</p>
+            <p *ngIf="directorForm.get('movie')!.errors?.['required']"> Le titre du film est obligatoire</p>
+    </mat-card-content>
+</mat-card>

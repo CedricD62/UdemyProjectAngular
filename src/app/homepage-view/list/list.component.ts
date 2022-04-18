@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { combineLatest } from 'rxjs';
 import { Director } from 'src/app/interfaces/director';
 import { Movie } from 'src/app/interfaces/movie';
 import { DirectorService } from 'src/app/services/director.service';
+import { MergeService } from 'src/app/services/merge.service';
 import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
@@ -16,17 +18,19 @@ export class ListComponent implements OnInit {
 
   constructor(
    private readonly movieService: MovieService,
-   private readonly directorService: DirectorService
+   private readonly directorService: DirectorService,
+   private readonly mergeService: MergeService
   ) { }
 
   ngOnInit(): void {
-    this.movieService.getMovies().subscribe((movies: Movie[]) => {
-      this.movies = movies;
+
+    combineLatest([
+      this.movieService.getMovies(),
+      this.directorService.getDirectors()
+    ]).subscribe(([movies,directors]: [Movie[], Director[]]) => {
+      this.movies = this.mergeService.findDirectorByMovie(movies,directors);
+      this.directors = this.mergeService.findMoviesByDirector(movies,directors);
     });
-    
-    this.directorService.getDirectors().subscribe((directors: Director[]) =>{
-      this.directors = directors;
-    })
   }
 
   deleteMovie(movie: Movie): void {

@@ -1,1 +1,13 @@
-<p>director-add works!</p>
+<mat-card>
+    <mat-card-title>Ajouter un réalisateur<span *ngIf="name"> : {{name}}</span></mat-card-title>
+    <mat-card-content>
+        <form #directorAddForm ="ngForm" (ngSubmit)="onSubmit()">
+            <label for="title"> Name</label>
+            <input type="text" name="name" [(ngModel)]="name" required minlength="2" #nameControl="ngModel">
+           <button [disabled]="!directorAddForm.form.valid" type="submit">Submit</button>
+        </form>
+        <p *ngIf="isCreated">Réalisateur ajouté</p>
+        <p *ngIf="nameControl.errors?.['required']"> Le réalisateur est obligatoire</p>
+        <p *ngIf="nameControl.errors?.['minlength']"> Le réalisateur doit comporter deux caractères minimum</p>
+</mat-card-content>
+</mat-card>

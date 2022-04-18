@@ -3,17 +3,17 @@
     {
       "id": "2",
       "title": "Joker",
-      "director": "Todd Phillips"
+      "director": "3"
     },
     {
       "id": "3",
       "title": "Black Panther",
-      "director": "Ryan Coogler"
+      "director": "2"
     },
     {
       "id": "C2X3-fJ",
       "title": "Kong",
-      "director": "Phil Jackson"
+      "director": "1"
     }
   ],
   "directors": [
@@ -21,21 +21,21 @@
       "id": "1",
       "name": "Phil Jackson",
       "movies": [
-        "Kong"
+        "C2X3-fJ"
       ]
     },
     {
       "id": "2",
       "name": "Ryan Coogler",
       "movies": [
-        "Black Panther"
+        "3"
       ]
-    },    
+    },
     {
       "id": "3",
       "name": "Todd Phillips",
       "movies": [
-        "Joker"
+        "2"
       ]
     }
   ]
